@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :photos, :through => :tags
 
   validates :name, :presence => true
+  include ActiveModel::Dirty
 end

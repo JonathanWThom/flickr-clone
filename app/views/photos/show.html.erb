@@ -1,1 +1,10 @@
 <%= image_tag @photo.image %>
+
+<% @photo.users.each do |user| %>
+  <%= user.name %>
+<% end %>
+
+<%= simple_form_for @photo do |f| %>
+  <%= f.association :users, collection: User.all, as: :check_boxes %>
+  <%= f.button :submit %>
+<% end %>

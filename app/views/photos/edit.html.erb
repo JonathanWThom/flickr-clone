@@ -1,0 +1,10 @@
+
+
+<!-- <%= form_for @photo do |f| %>
+  <% User.all.each do |user| %>
+    <%= f.check_box 'photo[user_ids][]', user.id, @photo.user_ids.include?(user.id), id: dom_id(user) %>
+    <%= f.label dom_id(user), user.name %>
+    <br>
+  <% end %>
+  <%= f.submit 'Add Tags' %>
+<% end %> -->
