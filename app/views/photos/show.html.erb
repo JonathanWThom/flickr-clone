@@ -10,9 +10,9 @@
       <%= f.association :users, collection: User.all, as: :check_boxes %>
       <%= f.button :submit %>
     <% end %>
+    <br>
+      <%= button_to "Delete", user_photo_path(), class: "btn",
+      data: {:confirm => "Are you sure?",
+        :method => "delete" } %>
   <% end %>
 <% end %>
-
-<%= link_to "Delete", user_photo_path(),
-      data: {:confirm => "Are you sure?",
-             :method => "delete" } %>
