@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    @user = User.find(params[:user_id])
+    @photos = Photo.where(owner_id: @user.id)
   end
 
   def new
@@ -10,7 +11,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(image: photo_params[:image], owner_id: current_user.id)
     if @photo.save
-      redirect_to photos_path
+      redirect_to root_path
     else
       render :new
     end
