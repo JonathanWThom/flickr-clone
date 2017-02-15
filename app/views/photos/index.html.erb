@@ -1,5 +1,5 @@
 <h1><%= @user.email %></h1>
 
 <% @photos.each do |photo| %>
-  <%= image_tag photo.image %>
+  <%= link_to image_tag(photo.image), user_photo_path(@user, photo) %>
 <% end %>
