@@ -1,1 +1,5 @@
-hey hey
+<h1>All Photos</h1>
+
+<% @photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>
