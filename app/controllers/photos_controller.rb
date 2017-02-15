@@ -23,11 +23,6 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  def edit
-    @user = User.find(params[:user_id])
-    @photo = Photo.find(params[:id])
-  end
-
   def update
     @photo = Photo.find(params[:id])
     if @photo.update(user_ids: tag_params[:user_ids])
@@ -36,6 +31,12 @@ class PhotosController < ApplicationController
       flash[:notice] = "Error"
       redirect_to user_photo_path(current_user, @photo)
     end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to user_photos_path(current_user)
   end
 
   private
