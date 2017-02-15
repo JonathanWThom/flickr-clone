@@ -8,5 +8,10 @@ class User < ApplicationRecord
   has_many :photos, :through => :tags
 
   validates :name, :presence => true
-  include ActiveModel::Dirty
+
+  after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver
+  end
+
 end
