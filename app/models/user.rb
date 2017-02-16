@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   acts_as_voter
   def welcome_send
-    # UserMailer.welcome_email(self).deliver
-    # redirect_to root_path
+    UserMailer.welcome_email(self).deliver_later
+    redirect_to root_path
   end
 
 end
