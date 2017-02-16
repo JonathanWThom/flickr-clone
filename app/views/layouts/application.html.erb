@@ -9,18 +9,33 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <strong><%= current_user.email %></strong>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-      <li><%= link_to "All Photos", root_path %></li>
-      <li><%= link_to "Add Photo", new_photo_path %></li>
-      <li><%= link_to "Tagged Photos", user_tags_path(current_user) %></li>
-      <li><%= link_to "Your Photos", user_photos_path(current_user) %></li>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
-      <%= link_to "All Photos", root_path %>
-    <% end %>
+
+    <div class="navbar">
+     <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+
+           <a class="navbar-brand" href="/">Flickr</a>
+         </div>
+         <div class="navbar-text navbar-right">
+
+           <% if user_signed_in? %>
+           <strong><%= current_user.email %></strong>
+           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
+           <%= link_to "All Photos", root_path, :class => 'navbar-link' %> |
+          <%= link_to "Add Photo", new_photo_path, :class => 'navbar-link' %> |
+           <%= link_to "Tagged Photos", user_tags_path(current_user), :class => 'navbar-link' %> |
+          <%= link_to "Your Photos", user_photos_path(current_user), :class => 'navbar-link' %> |
+           <% else %>
+           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
+           <%= link_to "All Photos", root_path, :class => 'navbar-link' %>
+           <% end %>
+         </div>
+       </div>
+     </nav>
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

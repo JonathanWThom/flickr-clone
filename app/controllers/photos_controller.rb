@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @user = User.find(params[:user_id])
     @photos = Photo.where(owner_id: @user.id)

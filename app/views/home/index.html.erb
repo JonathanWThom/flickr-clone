@@ -1,5 +1,7 @@
 <h1>All Photos</h1>
 
 <% @photos.each do |photo| %>
-  <%= link_to image_tag(photo.image), user_photo_path(photo.owner_id, photo) %>
+  <div class="well col-sm-6">
+    <%= link_to image_tag(photo.image(:medium)), user_photo_path(photo.owner_id, photo) %>
+  </div>
 <% end %>
