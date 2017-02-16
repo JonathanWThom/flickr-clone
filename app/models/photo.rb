@@ -6,4 +6,6 @@ class Photo < ActiveRecord::Base
   has_many :users, :through => :tags
   validates :owner_id, :presence => true
 
+  acts_as_votable
+
 end

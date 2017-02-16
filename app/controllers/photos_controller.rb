@@ -21,6 +21,15 @@ class PhotosController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
+    if params[:favorite] == '1'
+      @photo.liked_by current_user
+      redirect_to user_photo_path(@user, @photo)
+    end
+
+    if params[:favorite] == '-1'
+      @photo.disliked_by current_user
+      redirect_to user_photo_path(@user, @photo)
+    end
   end
 
   def update

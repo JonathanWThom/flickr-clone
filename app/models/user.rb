@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :name, :presence => true
 
   after_create :welcome_send
+
+  acts_as_voter
   def welcome_send
     UserMailer.welcome_email(self).deliver
   end
