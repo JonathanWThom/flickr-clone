@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'aws-sdk', '~> 2.3'
 gem 'mailgun_rails'
+gem 'rest-client'
 
 
 group :development, :test do
