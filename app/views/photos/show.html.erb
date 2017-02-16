@@ -5,6 +5,11 @@
 <% end %>
 
 <% if user_signed_in? %>
+  <% if current_user.voted_as_when_voted_for @photo %>
+    <%= link_to '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'.html_safe, :favorite => -1 %>
+  <% else %>
+      <%= link_to '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>'.html_safe, :favorite => 1 %>
+  <% end %>
   <% if current_user.id == @photo.owner_id %>
     <%= simple_form_for @photo do |f| %>
       <%= f.association :users, collection: User.all, as: :check_boxes %>
@@ -17,13 +22,6 @@
         :method => "delete" } %></button>
   <% end %>
 
-
-    <%= link_to "Favorite", :favorite => 1 %>
-    <%= link_to "Unfavorite", :favorite => -1 %>
-
 <% end %>
 
-<%= @photo.get_likes.size - @photo.get_dislikes.size %>
-<% if current_user.voted_as_when_voted_for @photo %>
-  <h4>You Liked This</h4>
-<% end %>
+<h3>Likes: <%= @photo.get_likes.size%></h3>
