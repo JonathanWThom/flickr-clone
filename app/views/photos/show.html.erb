@@ -6,9 +6,9 @@
 
 <% if user_signed_in? %>
   <% if current_user.voted_as_when_voted_for @photo %>
-    <%= link_to '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'.html_safe, :favorite => -1 %>
+    <%= link_to '<span class="glyphicon glyphicon-star" aria-hidden="true" id="not-great"></span>'.html_safe, :favorite => -1 %>
   <% else %>
-      <%= link_to '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>'.html_safe, :favorite => 1 %>
+      <%= link_to '<span class="glyphicon glyphicon-star-empty" aria-hidden="true" id="great"></span>'.html_safe, :favorite => 1 %>
   <% end %>
   <% if current_user.id == @photo.owner_id %>
     <%= simple_form_for @photo do |f| %>
