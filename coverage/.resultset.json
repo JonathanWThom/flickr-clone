@@ -730,6 +730,10 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
         null,
         null,
         null
@@ -742,6 +746,8 @@
         null,
         null,
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -780,6 +786,19 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/flickr-clone/app/controllers/favorites_controller.rb": [
+        1,
+        1,
+        1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/flickr-clone/app/controllers/home_controller.rb": [
         1,
         1,
@@ -811,6 +830,15 @@
         1,
         0,
         0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
         null,
         null,
         1,
@@ -912,6 +940,13 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/flickr-clone/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/flickr-clone/app/models/photo.rb": [
         1,
         1,
@@ -919,6 +954,9 @@
         null,
         1,
         1,
+        1,
+        1,
+        null,
         1,
         null,
         null
@@ -941,10 +979,20 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/flickr-clone/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/flickr-clone/spec/models/photo_spec.rb": [
         1,
         null,
         1,
+        2,
         2,
         2,
         null
@@ -964,14 +1012,13 @@
         2,
         2,
         null,
-        4,
-        1,
-        2,
-        1,
+        null,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1487261213
+    "timestamp": 1487267546
   }
 }

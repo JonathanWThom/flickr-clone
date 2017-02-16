@@ -25,3 +25,10 @@
 <% end %>
 
 <h3>Likes: <%= @photo.get_likes.size%></h3>
+
+<%= render "form_comments" %>
+
+<h1>Comments</h1>
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>

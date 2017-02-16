@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     resources :favorites, :only => [:index]
   end
 
-  resources :photos do
 
+  resources :photos do
+    resources :comments
   end
 end
