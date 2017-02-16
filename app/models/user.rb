@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   acts_as_voter
   def welcome_send
-    # UserMailer.welcome_email(self).deliver
+    UserMailer.welcome_email(self).deliver
   end
 
 end
