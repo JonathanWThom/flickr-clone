@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :tags
   end
 
+  resources :users, :only => [] do
+    resources :favorites, :only => [:index]
+  end
+
   resources :photos do
 
   end

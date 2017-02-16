@@ -25,8 +25,9 @@
            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
            <%= link_to "All Photos", root_path, :class => 'navbar-link' %> |
           <%= link_to "Add Photo", new_photo_path, :class => 'navbar-link' %> |
+           <%= link_to "Favorite Photos", user_favorites_path(current_user), :class => 'navbar-link' %> |
            <%= link_to "Tagged Photos", user_tags_path(current_user), :class => 'navbar-link' %> |
-          <%= link_to "Your Photos", user_photos_path(current_user), :class => 'navbar-link' %> |
+          <%= link_to "Your Photos", user_photos_path(current_user), :class => 'navbar-link' %>
            <% else %>
            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
