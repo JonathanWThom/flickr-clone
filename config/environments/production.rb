@@ -18,7 +18,7 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
 }
 ActionMailer::Base.delivery_method = :smtp
-require 'mailgun_rails'
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 
